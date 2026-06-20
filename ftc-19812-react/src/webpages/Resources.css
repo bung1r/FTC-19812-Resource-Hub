@@ -1,0 +1,46 @@
+.buttonPairDiv {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    flex: 1;
+}
+
+.detailedButton {
+    width:40%;
+    height: 90%;    
+    font-size: 30px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    display:block;
+    border-color: black;
+    background-color: rgb(35, 33, 37);
+    transition: border-color 0.3s;
+    cursor: pointer;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+
+    &:hover {
+        border-color: white;
+    }
+    &:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+    }
+}
+
+.descParagraph {
+    font-size:12px;
+    width:70%;
+    margin:0 auto;
+    color:rgb(240,240,240);
+}
+
+.buttonIcon {
+    height: 100px;
+    width: 100px;
+}
