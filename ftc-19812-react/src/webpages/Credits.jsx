@@ -31,6 +31,13 @@ function Credits() {
                 robotic by Jino from <a href="https://thenounproject.com/browse/icons/term/robotic/" target="_blank" title="robotic Icons">Noun Project</a> (CC BY 3.0) <br/>
                 module by dhanis from <a href="https://thenounproject.com/browse/icons/term/module/" target="_blank" title="module Icons">Noun Project</a> (CC BY 3.0) <br/>
                 strategy by erifqizeicon from <a href="https://thenounproject.com/browse/icons/term/strategy/" target="_blank" title="strategy Icons">Noun Project</a> (CC BY 3.0) <br/>
+                Folder by Colourcreatype from <a href="https://thenounproject.com/browse/icons/term/folder/" target="_blank" title="Folder Icons">Noun Project</a> (CC BY 3.0) <br/>
+                Pencil by cakslankers from <a href="https://thenounproject.com/browse/icons/term/pencil/" target="_blank" title="Pencil Icons">Noun Project</a> (CC BY 3.0) <br/>
+                Assignment by Suharsono from <a href="https://thenounproject.com/browse/icons/term/assignment/" target="_blank" title="Assignment Icons">Noun Project</a> (CC BY 3.0) <br/>
+                Video by Tuah Firmansyah from <a href="https://thenounproject.com/browse/icons/term/video/" target="_blank" title="Video Icons">Noun Project</a> (CC BY 3.0) <br/>
+                Slideshow by Manda from <a href="https://thenounproject.com/browse/icons/term/slideshow/" target="_blank" title="Slideshow Icons">Noun Project</a> (CC BY 3.0) <br/>
+                documentation by jumiati from <a href="https://thenounproject.com/browse/icons/term/documentation/" target="_blank" title="documentation Icons">Noun Project</a> (CC BY 3.0)
+
             </p>
             <div style={{height:"2px", width:"95%", margin:"0 auto", marginBottom:"8px"}}> </div>
             </div>
