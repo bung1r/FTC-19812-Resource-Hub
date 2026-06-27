@@ -14,6 +14,7 @@ import RHardware from './webpages/RHardware.jsx';
 import RModules from './webpages/RModules.jsx';
 import RSoftware from './webpages/RSoftware.jsx';
 import ROther from './webpages/ROther.jsx';
+import AssignmentPage from './props/assignmentPage.jsx';
 
 import CreditsPage from './webpages/Credits.jsx';
 
@@ -171,7 +172,7 @@ function App() {
             <Route path="/settings" element={<SettingsPage/>}/>
             <Route path="/credits" element={<CreditsPage/>} />
             <Route path="/signin" element={<SignInPage/>} />
-            
+            <Route path="/assignments/:id" element={<AssignmentPage/>}> </Route>
           </Routes>
 
         </div>

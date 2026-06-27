@@ -1,0 +1,75 @@
+.hero {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: rgb(20,20,20);
+    border-radius: 20px;
+    margin:10px;
+    padding: 10px;
+    padding-top: 0px;
+
+    h1 {
+        margin: 10px;
+        font-size: 70px;
+    }
+
+    
+}
+
+.section1, .section2, .section4
+{
+    display: flex;
+    flex-direction: row;  
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 20px;
+    background-color: rgb(30, 30, 30);
+
+    h1 {
+        margin: 20px;
+    }
+    img {
+        position: relative;
+        width: 50%;
+    }
+}
+
+.section1Text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;  
+    text-align: center;
+    padding: 5px;
+
+    h2{
+        font-size: 20px;
+    }
+}
+
+.section2 {
+    background-color: rgb(20,20,20);
+    justify-content: flex-end;
+
+}
+
+.section3, .section5 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(30, 30, 30);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    
+    h1, h2 {
+        margin: 10px;
+    }
+}
+
+.section4 {
+    background-color: rgb(20,20,20);
+}

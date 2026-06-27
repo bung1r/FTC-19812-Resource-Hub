@@ -117,6 +117,17 @@
   color: rgb(240,240,240);
 }
 
+.assignmentTitle {
+  margin: 0;
+  color: rgb(240,240,240);
+  text-decoration: none;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
+  
+}
+
 .editBtn {
   border-radius: 50%;
   width: 48px;
@@ -153,6 +164,74 @@
     border-radius: 5px;
     display: flex;
     padding: 10px;
+}
+
+.assignmentContentBG {
+  display: flex;
+  margin: 5px;
+  min-height: 300px;
+  gap:5px;
+  flex-direction: column;
+  background-color: rgb(20,20,20);
+  padding:10px;
+  border-radius: 10px;
+}
+
+.assignmentContentFooter,
+.assignmentContentTitle {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.somethingsomething {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  justify-content: space-around;
+  align-items: center;
+}
+.assignmentContentFooter {
+  padding: 7px;
+  border-radius: 10px;
+  margin-top: 8px;
+  background-color: rgb(34, 34, 34);
+  button {
+    width: 120px;
+    height: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+.assignmentContentEditBtn {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255,255,255,0.1);
+  border: 2px solid;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  img {
+    width:50px;
+    height: 50px;
+  }
+  &:hover{
+    background-color: rgba(255,255,255,0.3);
+  }
+}
+
+.assignmentContentType {
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  background-color: rgba(255,255,255,0.2);
+  border:none;
+  img {
+    width:50px;
+    height: 50px;
+  }
 }
 
 /* .assignment {

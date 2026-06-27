@@ -190,7 +190,11 @@
     gap:30px;
     border-top: white;
     padding: 15px;
+    pointer-events: none;
 
+    button{
+      pointer-events: auto;
+    }
   }
 
   .sideBarBackButton {
@@ -200,18 +204,22 @@
     font-size: 25px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transition: opacity 0.2s ease;
-
+    cursor:pointer;
   }
 
-    .sideBarBackButton.hidden {
-      opacity: 0;
-      pointer-events: none
-    }
-    
-    .sideBarBackButton.show {
-      opacity: 1;
-      pointer-events: all;
-    }
+  .sideBarBackButton.hidden,
+  .sideBarBackButton.hidden * {
+    opacity: 0;
+    pointer-events: none;
+    cursor:pointer;
+  }
+
+  
+  .sideBarBackButton.show {
+    opacity: 1;
+    pointer-events: auto;
+    cursor:pointer;
+  }
 
 .linksAndSuch {
   align-items: center;

@@ -18,7 +18,7 @@ function Credits() {
             </h3>
             <p>
                 Benny N: Website Developer <br></br>
-                Justin N: Quality Control <br></br>
+                Justin N: Co-Developer <br></br>
                 Ridam B: Quality Control <br></br>
             </p>
             <div style={{height:"2px", width:"95%", margin:"0 auto", marginBottom:"8px"}}> </div>

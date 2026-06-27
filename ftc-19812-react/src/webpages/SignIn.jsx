@@ -1,6 +1,18 @@
-import { GoogleLogin } from '@react-oauth/google';
+import { supabase } from "../lib/supabase"
+
 
 function SignInPage() {
+
+    async function signInWithGoogle() {
+        const { error } = await supabase.auth.signInWithOAuth({
+            provider: "google",
+        });
+
+        if (error) {
+            console.error(error);
+        }
+    }
+
     return (
         <>
             <h1> Sign In! </h1>
@@ -11,10 +23,9 @@ function SignInPage() {
             <div style={{padding:"20px"}}> </div>
 
             <div style={{alignItems:"center", justifyContent:"center", margin:"0 auto"}}>
-                <GoogleLogin 
-                onSuccess={(response) => {console.log(response)}}
-                onSuccess= {() => {console.log("Login FAILED!! How dare?")}}
-                />
+                <button onClick={() => signInWithGoogle()}>
+                    Sign in with Google
+                </button>
             </div>
 
         </>
