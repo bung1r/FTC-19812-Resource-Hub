@@ -5,7 +5,7 @@ import pencilIcon from "../assets/pencil_icon.svg";
 
 import "../webpages/RModules.css"
 
-function Folder({folder, assignments = [], user, onEdit, onEditAssignment}) {
+function Folder({folder, assignments = [], user, onEdit, onEditAssignment, userData}) {
   const [open, setOpen] = useState(false);
   const [checked, setCheck] = useState(false);
 
@@ -31,9 +31,12 @@ function Folder({folder, assignments = [], user, onEdit, onEditAssignment}) {
           </div>
 
           {/* Edit button */}
-          <button className="editBtn">
-            <img src={pencilIcon} alt="edit" onClick={() => onEdit(folder)} />
-          </button>
+          {(userData != null && (userData.role === "owner" || userData.role === "admin")) && (
+            <button className="editBtn">
+              <img src={pencilIcon} alt="edit" onClick={() => onEdit(folder)} />
+            </button> 
+          )}
+          
         </div>
 
         {/* RIGHT SIDE */}
@@ -46,7 +49,7 @@ function Folder({folder, assignments = [], user, onEdit, onEditAssignment}) {
       {open && (
         <div className="assignments">
           {assignments.map(assignment => (
-            <Assignment key={assignment.id} assignment={assignment} onEdit={onEditAssignment} user={user}> </Assignment>
+            <Assignment key={assignment.id} assignment={assignment} onEdit={onEditAssignment} user={user} userData={userData}> </Assignment>
           ))}
         </div>
       )}

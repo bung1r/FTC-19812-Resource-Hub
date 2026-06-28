@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {Routes, Route, useNavigate } from "react-router-dom";
+import { supabase } from './lib/supabase.js';
+import { checkFromDatabase, addToDatabase, updateDatabaseComplex } from './api/databaseHelpers.js';
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
@@ -15,6 +17,7 @@ import RModules from './webpages/RModules.jsx';
 import RSoftware from './webpages/RSoftware.jsx';
 import ROther from './webpages/ROther.jsx';
 import AssignmentPage from './props/assignmentPage.jsx';
+import Admin from './webpages/Admin.jsx';
 
 import CreditsPage from './webpages/Credits.jsx';
 
@@ -27,21 +30,85 @@ import SignInPage from './webpages/SignIn.jsx'
 
 import './App.css'
 
-
+const ownerEmail = import.meta.env.VITE_OWNER_EMAIL;
 
 function App() {
   // const [count, setCount] = useState(0)
   // const [sympathies, setSympathies] = useState(10) 
   // const [page, setPage] = useState("Home");
   const navigate = useNavigate();
+  const [user, setUser] = useState(null); 
+  const [userDB, setUserDB] = useState(null); 
   const [sideBarEnabled, setSideBar] = useState(true) // open and closed;
+
+  useEffect(() => {
+        async function fetchUser() {
+            const {data:{user}} = await supabase.auth.getUser();
+            setUser(user);
+
+            if (user != null) {
+
+              const {data} = await checkFromDatabase("Users", "user_id", user.id);
+              const email = user.user_metadata.email;
+
+              if (data == null) {
+               
+                
+                if (email === ownerEmail) {
+                  // for the owner specifically
+                  await addToDatabase("Users", {"user_id":user.id, "role":"owner", "email":email, "name":user.user_metadata.name});
+                } else if (email.includes("@oarobotics.org")) { 
+                  // for members
+                  await addToDatabase("Users", {"user_id":user.id, "role":"member", "email":email, "name":user.user_metadata.name});
+                } else {
+                  // for guests
+                  await addToDatabase("Users", {"user_id":user.id, "role":"guest", "email":email, "name":user.user_metadata.name});
+                }
+                
+                const {data} = await checkFromDatabase("Users", "user_id", user.id);
+                setUserDB(data);
+                
+              } else {
+                await updateDatabaseComplex("Users", {"email":email, "name":user.user_metadata.name}, "user_id", user.id);
+                setUserDB(data);
+              }
+            } 
+        }
+
+        fetchUser();
+    }, []);
+
+  // Determines whether in the top right there's the sign in/sign out button or if it's the user and avatar
+  function buttonsOrUsername() {
+    if (user == null) {
+      return (
+      <>
+            <button type="button" className="signup" onClick={() => navigate("/signin")}>
+            Sign Up  
+            </button>
+            <button type="button" className="signin" onClick={() => navigate("/signin")}>
+            Sign In
+            </button>
+      </>);
+    } else {
+      return (  
+        <a className='appprofileButton' href='http://localhost:5173/settings'>
+          <img src={user.user_metadata.avatar_url} alt="PFP" width="40" height="40" style={{borderRadius:"50%"}} />
+          <p> {user.user_metadata.full_name} </p>
+        </a>
+      )
+    }
+    
+    
+  }
+
 
   return (
     <div className='page'>
       
       <header className='headerClass'>
         <div className='topLeftLogo'>
-          <a href="http://localhost:5173/" target="_blank">
+          <a href="http://localhost:5173/">
             <img src={FTCLogo} className="button-icon" alt='LOGO' />
           </a>
           <h3>
@@ -91,21 +158,8 @@ function App() {
               </a>
           </div>
         </div>
-        <div>
-          <button
-          type="button"
-          className="signup"
-          onClick={() => navigate("/signin")}
-          >
-          Sign Up  
-          </button>
-          <button
-          type="button"
-          className="signin"
-          onClick={() => navigate("/signin")}
-          >
-          Sign In
-          </button>
+        <div style={{display:"flex", flexDirection:"row", justifyContent:"flex-start", alignItems:"center", gap:"5px"}}>
+          {buttonsOrUsername()}
         </div>
       </header>
       
@@ -142,6 +196,16 @@ function App() {
             >
               Credits
             </button>
+
+            {(userDB != null && (userDB.role === "admin" || userDB.role === "owner")) && (
+              <button
+                type="button"
+                onClick={() => navigate("/admin")}
+              >
+                Admin
+              </button>
+            )}
+            
           </div>
           
           <div className='sideBarBottom'>
@@ -172,6 +236,7 @@ function App() {
             <Route path="/settings" element={<SettingsPage/>}/>
             <Route path="/credits" element={<CreditsPage/>} />
             <Route path="/signin" element={<SignInPage/>} />
+            <Route path="/admin" element={<Admin/>}/>
             <Route path="/assignments/:id" element={<AssignmentPage/>}> </Route>
           </Routes>
 

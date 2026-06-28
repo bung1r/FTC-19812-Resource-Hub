@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase"
 import { useNavigate } from "react-router-dom";
 
-import {addToDatabase, removeFromDatabase, updateDatabase } from "../api/databaseHelpers.js";
+import {addToDatabase, removeFromDatabase, updateDatabase, checkFromDatabase } from "../api/databaseHelpers.js";
 
 function RModules() {
 
@@ -31,6 +31,7 @@ function RModules() {
     const [tempOrder, setTempOrder] = useState(0);
 
     const [user, setUser] = useState(null);
+    const [userData, setUserData] = useState(null); // user data is the one with the roles. 
 
     
     
@@ -41,10 +42,15 @@ function RModules() {
             const {data:fData} = await supabase.from("Folders").select("*").order("order", {ascending:true});
             const {data:aData} = await supabase.from("Assignments").select("*").order("order", {ascending:true});
             const {data:{user}} = await supabase.auth.getUser();
+            if (user != null) {
+                const {data:singleUserData} = await checkFromDatabase("Users", "user_id", user.id);
+                setUserData(singleUserData);
+            }
 
             setFolderData(fData || []);
             setAssignmentData(aData || []);
             setUser(user);
+            
         }
 
         fetchData();
@@ -58,15 +64,22 @@ function RModules() {
         setAssignmentData(aData || []);
     }
 
+    function addFolderButtonDisplay() {
+        if (userData != null && (userData.role === "owner" || userData.role === "admin")) {
+            return <button className="addFolder" onClick={() => {setFolderModal(true); setTempTitle("Default"); setTempOrder(0)}}>
+                    +
+            </button>;
+        } else {
+            return <h1></h1>;
+        }
+    }
 
     return (
         (<>
             <div className="moduleTitleDiv">
                 <h1></h1>
                 <h1>Modules</h1>
-                <button className="addFolder" onClick={() => {setFolderModal(true); setTempTitle("Default"); setTempOrder(0)}}>
-                    +
-                </button>
+                {addFolderButtonDisplay()}
             </div>
             
             <div className="moduleHolder">
@@ -76,6 +89,7 @@ function RModules() {
                         folder={folder} 
                         assignments={assignmentData.filter(a => a.folder_id === folder.id)}
                         user={user}
+                        userData={userData}
                         onEdit={(folder) => {
                             setSelectedFolder(folder);
                             setFolderModal(false);

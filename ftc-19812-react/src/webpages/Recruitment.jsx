@@ -12,18 +12,21 @@ function Recruitment() {
     return (
         (<>
             {/* Hero Section */}
-            <div className="hero">
+            <div className="rechero">
                 <h1>Join Quantum Leap FTC</h1>
                 <h2>Teams 19812 and 23796</h2>
                 <p> Build robots. Learn engineering. Make friends. Compete. </p>
-                <a href="https://docs.google.com">Join FTC!</a>
+                <a href="https://docs.google.com" className="recjoinFTCButton">
+                    Join FTC!
+                </a>
+               
             </div>
             
 
             {/* What is FTC */}
-            <div className="section1">
+            <div className="recsection1">
                 <img src={HeroRecruitmentImg}></img>
-                <div className="section1Text">
+                <div className="recsection1Text">
                     <h1>
                         What is FTC?
                     </h1>
@@ -35,8 +38,8 @@ function Recruitment() {
             </div>
             
             {/* Why Join Us */}
-            <div className="section2">
-                <div className="section1Text">
+            <div className="recsection2">
+                <div className="recsection1Text">
                     <h1>
                         Why Join Us?
                     </h1>
@@ -57,8 +60,8 @@ function Recruitment() {
             </div>
 
             {/* NO EXPERIENCE NEEDED  */}
-            <div className="section3">
-                <div className="section1Text">
+            <div className="recsection3">
+                <div className="recsection1Text">
                     <h1> NO EXPERIENCE NEEDED!! </h1>
                     <h2> 
                         That's right! You need absolutely 0 experience in order to get on the team <br></br>
@@ -69,9 +72,9 @@ function Recruitment() {
             </div>
 
             {/* TIme Commitment  */}
-            <div className="section4">
+            <div className="recsection4">
                 <img src={TimeCommitmentImg}></img>
-                <div className="section1Text">
+                <div className="recsection1Text">
                     <h1>
                         Time Commitment
                     </h1>
@@ -85,8 +88,8 @@ function Recruitment() {
                 </div>
             </div>
 
-            <div className="section3">
-                <div className="section1Text">
+            <div className="recsection3">
+                <div className="recsection1Text">
                     <h1> ?? Frequently Asked Questions ?? </h1>
                     <Dropdown question="How much experience is recommended!" answer="Depends on what team you're joining! There's a software and mechanical/eletrical team, so any knowledge about whatever team you want to join will help a ton! For software, knowing Java concepts would be quite helpful. However, as long as you are open to learning, any amount of experience (even none) is fine!"></Dropdown>
                     <Dropdown question="What grade level do I need to be to join?" answer="Any! It doesn't matter what grade you're in, just come on in and let our leads handle it from there. (But do apply, of course!)"></Dropdown>

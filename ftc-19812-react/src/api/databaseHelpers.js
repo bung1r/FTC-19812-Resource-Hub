@@ -7,6 +7,13 @@ export async function updateDatabase(from, key, value, row) {
     .eq("id", row);        
 }
 
+export async function updateDatabaseComplex(from, value, eqKey, eqValue) {
+    return await supabase
+    .from(from)
+    .update(value)  
+    .eq(eqKey, eqValue);     
+}
+
 export async function addToDatabase(from, value) {
     return await supabase
     .from(from)
@@ -19,3 +26,12 @@ export async function removeFromDatabase(from, row) {
     .delete()
     .eq("id", row);
 }
+
+export async function checkFromDatabase(from, key, value) {
+    return await supabase
+    .from(from)
+    .select("*")
+    .eq(key, value)
+    .maybeSingle();
+}
+

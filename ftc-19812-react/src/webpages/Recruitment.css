@@ -1,4 +1,4 @@
-.hero {
+.rechero {
 
     display: flex;
     flex-direction: column;
@@ -18,7 +18,29 @@
     
 }
 
-.section1, .section2, .section4
+.recjoinFTCButton {
+    
+    display: flex;
+    background-color: rgb(40,40,70);
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid;
+    border-radius: 7px;
+    border-color: white;
+    width:120px;
+    height:40px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: solid;
+    color: rgb(240,240,255);
+    font-size: 25px;
+    transition: background-color 0.3s;
+    &:hover{
+        background-color: rgb(120,120,210);
+    }
+}
+
+.recsection1, .recsection2, .recsection4
 {
     display: flex;
     flex-direction: row;  
@@ -38,7 +60,7 @@
     }
 }
 
-.section1Text {
+.recsection1Text {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -51,13 +73,13 @@
     }
 }
 
-.section2 {
+.recsection2 {
     background-color: rgb(20,20,20);
     justify-content: flex-end;
 
 }
 
-.section3, .section5 {
+.recsection3, .recsection5 {
     display: flex;
     flex-direction: column;
     background-color: rgb(30, 30, 30);
@@ -70,6 +92,6 @@
     }
 }
 
-.section4 {
+.recsection4 {
     background-color: rgb(20,20,20);
 }

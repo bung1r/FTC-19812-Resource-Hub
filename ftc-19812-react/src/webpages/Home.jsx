@@ -2,21 +2,12 @@ import HomepageCollage from '../assets/collage.png';
 import RoboticsTopBanner from '../assets/robotics_top_banner.png'
 
 import '../App.css'
-
+import './Home.css'
 
 function HomePage() {
     return (
         (<>
-            <div 
-                style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-around",
-                // margin:"1%",
-                padding:"1%",
-                backgroundColor:"rgb(24, 24, 24)"
-                }}
-            >
+            <div className="homesection1">
                 <div 
                 style={{
                     justifyContent:"center"
@@ -58,19 +49,12 @@ function HomePage() {
             
             </div>
             
-            <div
-                style={{
-                justifyContent:"space-around",
-                flexDirection: "row",
-                display: "flex",
-                padding:"1%",
-                }}
-            >
+            <div className='homesection2'>
                 <img
                 src={HomepageCollage}
                 alt='Collage'
                 style={{
-                    width:"30%"
+                    width:"35%"
                 }}
                 >
                     
@@ -103,7 +87,22 @@ function HomePage() {
 
             </div>
             
-                {/* This over here is the spacer! */}
+            <div className='homesection3'>
+                <h1> Our Sponsors! </h1>
+                <div className='homewhiteLine'></div>
+
+                <h2> Motors Sponsors </h2>
+                <div className="homesponsorHolder"></div>
+                <div className='homewhiteLine'></div>
+
+                <h2> Gear Sponsors </h2>
+                <div className="homesponsorHolder"></div>
+                <div className='homewhiteLine'></div>
+
+                <h2> Sprocket Sponsors </h2>
+                <div className="homesponsorHolder"></div>
+            </div>
+            {/* This over here is the spacer! */}
             <div style={{padding:"20px"}}> </div>
 
         </>)

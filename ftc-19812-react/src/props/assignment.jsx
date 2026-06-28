@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 import "../webpages/RModules.css"
 
-function Assignment({assignment, onEdit, user}) {
+function Assignment({assignment, onEdit, user, userData}) {
 
     const navigate = useNavigate();
     const [checked, setCheck] = useState(false);
@@ -20,9 +20,7 @@ function Assignment({assignment, onEdit, user}) {
     // Fetch the completed/not completed data if logged in 
     useEffect(() => {
         async function fetchData() {
-            console.log(user.id);
-            console.log(assignment.id);
-            
+    
             if (user != null) {
                 const {data, error} = await supabase.from("AssignmentProgress")
                     .select("*")
@@ -67,9 +65,12 @@ function Assignment({assignment, onEdit, user}) {
                 </div>
     
                 {/* Edit button */}
+                {(userData != null && (userData.role === "owner" || userData.role === "admin")) && (
                 <button className="editBtn" onClick={() => onEdit(assignment)}>
-                <img src={pencilIcon} alt="edit" />
+                    <img src={pencilIcon} alt="edit" />
                 </button>
+                )}
+                
             </div>
     
             {/* RIGHT SIDE */}
