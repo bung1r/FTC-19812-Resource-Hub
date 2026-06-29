@@ -31,6 +31,7 @@ import SignInPage from './webpages/SignIn.jsx'
 import './App.css'
 
 const ownerEmail = import.meta.env.VITE_OWNER_EMAIL;
+const websiteRef = import.meta.env.VITE_APP_URL
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -40,6 +41,8 @@ function App() {
   const [user, setUser] = useState(null); 
   const [userDB, setUserDB] = useState(null); 
   const [sideBarEnabled, setSideBar] = useState(true) // open and closed;
+
+  
 
   useEffect(() => {
         async function fetchUser() {
@@ -79,6 +82,8 @@ function App() {
     }, []);
 
   // Determines whether in the top right there's the sign in/sign out button or if it's the user and avatar
+
+
   function buttonsOrUsername() {
     if (user == null) {
       return (
@@ -92,7 +97,7 @@ function App() {
       </>);
     } else {
       return (  
-        <a className='appprofileButton' href='http://localhost:5173/settings'>
+        <a className='appprofileButton' href={`${websiteRef}/settings`}>
           <img src={user.user_metadata.avatar_url} alt="PFP" width="40" height="40" style={{borderRadius:"50%"}} />
           <p> {user.user_metadata.full_name} </p>
         </a>
@@ -108,7 +113,7 @@ function App() {
       
       <header className='headerClass'>
         <div className='topLeftLogo'>
-          <a href="http://localhost:5173/">
+          <a href={websiteRef}>
             <img src={FTCLogo} className="button-icon" alt='LOGO' />
           </a>
           <h3>
