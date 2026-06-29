@@ -1,9 +1,8 @@
+import ResourcesTemplate from "../props/resourcesTemplate";
 function RHardware() {
     return (
-        (<>
-            <h1>Resources/Hardware Page</h1>
-        </>)
+        <ResourcesTemplate title="Hardware Resources" section="hardware" />
     )
 }
 
-export default RHardware
+export default RHardware;

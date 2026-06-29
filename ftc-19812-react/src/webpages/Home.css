@@ -27,10 +27,19 @@
 }
 
 .homesponsorHolder {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     display: flex;
     align-items: center;
+
+    h2 {
+        font-size: 25px;
+        margin:10px
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
 }
 
 .homewhiteLine {

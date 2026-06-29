@@ -16,7 +16,7 @@ function Recruitment() {
                 <h1>Join Quantum Leap FTC</h1>
                 <h2>Teams 19812 and 23796</h2>
                 <p> Build robots. Learn engineering. Make friends. Compete. </p>
-                <a href="https://docs.google.com" className="recjoinFTCButton">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe6k4iEP3Rn8np8tixvdB7z_HVA1IbgN0EcPNG5vsHwC99mQ/viewform?usp=publish-editor" className="recjoinFTCButton">
                     Join FTC!
                 </a>
                

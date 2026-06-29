@@ -1,9 +1,7 @@
+import ResourcesTemplate from "../props/resourcesTemplate.jsx"
+
 function RSoftware() {
-    return (
-        (<>
-            <h1>Resources/Software Page</h1>
-        </>)
-    )
+    return <ResourcesTemplate title="Software Resources" section="software"/>
 }
 
 export default RSoftware

@@ -1,9 +1,7 @@
+import ResourcesTemplate from "../props/resourcesTemplate.jsx"
+
 function ROther() {
-    return (
-        (<>
-            <h1>Resources/Other Page</h1>
-        </>)
-    )
+    return <ResourcesTemplate title="Other Resources" section="other"/>
 }
 
 export default ROther

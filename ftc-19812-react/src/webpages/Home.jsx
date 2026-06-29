@@ -92,7 +92,10 @@ function HomePage() {
                 <div className='homewhiteLine'></div>
 
                 <h2> Motors Sponsors </h2>
-                <div className="homesponsorHolder"></div>
+                <div className="homesponsorHolder">
+                    <h2> Disney Parks and Resorts </h2>
+                    <p> Right in the backyard of Disneyland Anaheim, we are grateful to our Disney mentors and sponsors who have been instrumental in providing technical experience and funds to our program. </p>
+                </div>
                 <div className='homewhiteLine'></div>
 
                 <h2> Gear Sponsors </h2>
