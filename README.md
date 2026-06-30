@@ -1,16 +1,10 @@
-# React + Vite
+# FTC Resource Hub
+## made by Bung1r
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Resource Hub Website is intended by use by all members of FTC, Software and Hardware. 
 
-Currently, two official plugins are available:
+Its main purpose is to aggregate both software and hardware resources of all different formats (slideshows, documents, and videos) in order to not only centralize the learning of our FTC 19812 team, but also to give other teams the resources they need to kickstart their learning journeys or make their 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This website utilizes React as its frontend language, with Supabase serving as the Backend As A Service.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This website boasts neatly organized 'Folders' and 'Assignments' which can be added through the front-end by administrators, so anyone can edit the website. This makes the website easier to maintain and easier to 'pass down.' Additionally, google authentication is used to automatically assign FTC 19812 members with a 'member' role, instead of the standard Guest role.
