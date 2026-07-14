@@ -10,10 +10,6 @@ This website utilizes React as its frontend language, with Supabase serving as t
 
 This website boasts neatly organized 'Folders' and 'Assignments' which can be added through the front-end by administrators, so anyone can edit the website. This makes the website easier to maintain and easier to 'pass down.' Additionally, google authentication is used to automatically assign FTC 19812 members with a 'member' role, instead of the standard Guest role.
 
-dajfkskdfasd;flkjasdl;fkjads;fljkasd
-I want to be
-Nevermind I want to become the lord of everything. 
-
 ### How to Run/Instructions (for Macondo or anyone I suppose)
 The easiest way to access the website is to simply go to: <br>
 https://ftc-19812-resource-hub.vercel.app/ <br><br>
