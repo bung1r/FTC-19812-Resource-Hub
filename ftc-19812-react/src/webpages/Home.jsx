@@ -36,16 +36,18 @@ function HomePage() {
                 </p>
                 </div>
 
-                <div>
-                <img 
-                src={RoboticsTopBanner}
-                alt="Banner"
-                style={{
-                    width:"auto",
-                }}
                 
-                />
-                </div>
+                    <img 
+                    src={RoboticsTopBanner}
+                    alt="Banner"
+                    style={{
+                        width:"50%",
+                        aspectRatio:"3/2",
+                        objectFit:"cover"
+                    }}
+                    
+                    />
+                
             
             </div>
             
@@ -54,7 +56,9 @@ function HomePage() {
                 src={HomepageCollage}
                 alt='Collage'
                 style={{
-                    width:"35%"
+                    width:"35%",
+                        aspectRatio:"2/3",
+                        objectFit:"cover"
                 }}
                 >
                     

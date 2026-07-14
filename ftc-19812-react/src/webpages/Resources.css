@@ -10,7 +10,7 @@
 .detailedButton {
     width:40%;
     height: 90%;    
-    font-size: 30px;
+    /* font-size: 30px; */
     padding: 5px 10px;
     border-radius: 10px;
     border: 2px solid transparent;
@@ -35,13 +35,13 @@
 }
 
 .descParagraph {
-    font-size:12px;
+    /* font-size:12px; */
     width:70%;
     margin:0 auto;
     color:rgb(240,240,240);
 }
 
 .buttonIcon {
-    height: 100px;
-    width: 100px;
+    height: 8vw;
+    aspect-ratio: 1;
 }

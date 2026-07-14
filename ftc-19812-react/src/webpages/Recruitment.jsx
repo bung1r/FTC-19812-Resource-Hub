@@ -55,7 +55,7 @@ function Recruitment() {
                     </h2>
                     <h2> You decide! </h2>
                 </div>  
-                <img src={WhyJoinUsImg}></img>
+                <img src={WhyJoinUsImg} style={{aspectRatio:"3/2"}}></img>
                 
             </div>
 
